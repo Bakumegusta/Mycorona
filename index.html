@@ -17,44 +17,74 @@
     <section class="container">
 
             <h1>Covid-19 India</h1> <hr>
-            <div class="card-group">
-                <div class="card text-white primary text-center ml-4 " style="max-width: 15rem;">
-                  <div class="card-header">Confirmed</div> 
+            <div class="card-group" id="deskcard">
+                <div class="card text-white  text-center ml-4 " style="max-width: 15rem;">
+                  <div class="card-header confirmed">Confirmed</div> 
                   <div class="card-body">
-                    <h5 class="card-title" id="confirmed">0</h5>
-                    <p class="card-text">[+]</p>
+                    <h5 class="card-title confirmed" id="confirmed">0</h5>
+                    <p class="card-text"> <span id="plusconfirmed"></span></p>
                   </div>
                 </div>
-                <div class="card text-white secondary text-center ml-4 " style="max-width: 15rem;">
-                  <div class="card-header">Recovered</div>
+                <div class="card text-white  text-center ml-4 " style="max-width: 15rem;">
+                  <div class="card-header recovered">Recovered</div>
                   <div class="card-body">
-                    <h5 class="card-title" id="recovered">0</h5>
-                    <p class="card-text">[+]</p>
+                    <h5 class="card-title recovered" id="recovered">0</h5>
+                    <p class="card-text"><span id="plusconfirmed"></p>
                   </div>
                 </div>
-                <div class="card text-white success text-center ml-4 " style="max-width: 15rem;">
-                  <div class="card-header">Active</div>
+                <div class="card text-white  text-center ml-4 " style="max-width: 15rem;">
+                  <div class="card-header active">Active</div>
                   <div class="card-body">
-                    <h5 class="card-title" id="active">0</h5>
-                    <p class="card-text">[+]</p>
+                    <h5 class="card-title active" id="active">0</h5>
+                    <p class="card-text"><span id="plusconfirmed"></p>
                   </div>
                 </div>
-                <div class="card text-white danger text-center ml-4 " style="max-width: 15rem;">
-                  <div class="card-header">Death</div>
+                <div class="card text-white  text-center ml-4 " style="max-width: 15rem;">
+                  <div class="card-header deaths">Deaths</div>
                   <div class="card-body">
-                    <h5 class="card-title" id="deaths">0</h5>
-                    <p class="card-text">[+]</p>
+                    <h5 class="card-title deaths" id="deaths">0</h5>
+                    <p class="card-text"><span id="plusconfirmed"></p>
                   </div>
                 </div>
             </div>
+    <section id="mobcard">
+      <div class="col-sm-6 col-lg-4">
+        <div class="card" style="max-width: 30rem;">
+          <div class="card-header bg-youtube content-center" id="card-head">
+            <h5> Total</h5>
+          </div>
+          <div class="card-body row text-center">
+            <div class="col">
+              <div class="text-value-xl " ><span id="mdeaths">0</span></div>
+              <div class="text-uppercase text-muted small">Deaths</div>
+            </div>
+            <div class="col">
+              <div class="text-value-xl"><span id="mconfirmed">0</span></div>
+              <div class="text-uppercase text-muted small">Confirmed</div>
+            </div>
+              <div class="col">
+              <div class="text-value-xl"><span id="mactive">0</span></div>
+              <div class="text-uppercase text-muted small">Active</div>
+            </div>
+            <div class="col">
+              <div class="text-value-xl"><span id="mrecovered">0</span></div>
+              <div class="text-uppercase text-muted small">Recovered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
 
-    <h6>Last Updadted :  <span id="LastUpdate"></span></h6>
+    <h6>Last Updated :  <span id="LastUpdate"></span></h6>
   
     
            <div id="corona-tab" class="tab-content current display table-responsive "> </div>
             </div>
 
     </section>
+
+
+ 
 <!--     <section class="container">
         <table class="table" id="coronaDistTable">
     <thead class="table-dark">

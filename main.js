@@ -1,3 +1,10 @@
+$('#mobcard').hide();
+
+if (screen.width <= 699) {
+    $('#deskcard').hide();
+    $('#mobcard').show();
+}
+
 getcorona();
 // Karnataka();
 
@@ -5,7 +12,7 @@ function getcorona() {
     fetch("https://api.covid19india.org/data.json")
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+            console.log(data);
             const {
                 statewise: [total]
             } = data;
@@ -16,6 +23,10 @@ function getcorona() {
             document.querySelector('#confirmed').textContent = total.confirmed;
             document.querySelector('#deaths').textContent = total.deaths;
             document.querySelector('#recovered').textContent = total.recovered;
+            document.querySelector('#mactive').textContent = total.active;
+            document.querySelector('#mconfirmed').textContent = total.confirmed;
+            document.querySelector('#mdeaths').textContent = total.deaths;
+            document.querySelector('#mrecovered').textContent = total.recovered;
             document.querySelector('#LastUpdate').textContent = time.toLocaleString();
             var tblHtml =
                 "<table class='table ' id='coronaTable'>";
@@ -43,7 +54,7 @@ function getcorona() {
                     tblHtml += "</thead>";
                     tblHtml += "<tbody>";
                     $.each(data.statewise, function(i, d) {
-                        tblHtml += "<tr class ='default'>";
+                        tblHtml += "<tr>";
                         var value1 = [];
                         $.each(d, function(key, value) {
                             value1.push(value);

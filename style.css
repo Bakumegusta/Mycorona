@@ -50,6 +50,7 @@ background-color: rgb(99, 111, 131);
 h6{
   font-size: 9px;
   text-align: center;
+  color: white !important;
 }
 .card {
   display:inline-block;
@@ -59,7 +60,7 @@ h6{
 } 
 
 ::-webkit-scrollbar {
-    width: 1px;
+    width: 0px;
 }
  
 /* Track */

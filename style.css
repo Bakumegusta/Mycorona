@@ -14,7 +14,8 @@ body {
   height: 500px;
 }
 #mobcard{
-  width: 96% !important;
+  width: 110% !important;
+  margin-left:-15px;
 }
 #card-head{
 background-color: rgb(99, 111, 131) !important;

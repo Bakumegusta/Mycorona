@@ -17,7 +17,10 @@ function getcorona() {
                 statewise: [total]
             } = data;
             var time = total.lastupdatedtime;
-            console.log(time.toLocaleString());
+            var datearray = time.split("/");
+            var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+            var localTime = new Date(newdate);
+            console.log(newdate);
             document.querySelector('#active').textContent = total.active;
             document.querySelector('#confirmed').textContent = total.confirmed;
             document.querySelector('#deaths').textContent = total.deaths;
@@ -26,8 +29,8 @@ function getcorona() {
             document.querySelector('#mconfirmed').textContent = total.confirmed;
             document.querySelector('#mdeaths').textContent = total.deaths;
             document.querySelector('#mrecovered').textContent = total.recovered;
-            document.querySelector('#LastUpdate').textContent = time.toLocaleString();
-
+            document.querySelector('#LastUpdate').textContent = localTime.toLocaleString();
+            // counter code
             $('.count').each(function() {
                 $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
@@ -39,6 +42,7 @@ function getcorona() {
                     }
                 });
             });
+            // table rendering
             var tblHtml =
                 "<table class='table ' id='coronaTable'>";
             tblHtml += "<thead class = 'table-dark'>";

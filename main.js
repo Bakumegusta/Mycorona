@@ -1,5 +1,4 @@
 $('#mobcard').hide();
-
 if (screen.width <= 699) {
     $('#deskcard').hide();
     $('#mobcard').show();
@@ -7,6 +6,7 @@ if (screen.width <= 699) {
 
 getcorona();
 // Karnataka();
+
 
 function getcorona() {
     fetch("https://api.covid19india.org/data.json")
@@ -17,8 +17,7 @@ function getcorona() {
                 statewise: [total]
             } = data;
             var time = total.lastupdatedtime;
-            var time = new Date();
-            // console.ltime.toDateString());
+            console.log(time.toLocaleString());
             document.querySelector('#active').textContent = total.active;
             document.querySelector('#confirmed').textContent = total.confirmed;
             document.querySelector('#deaths').textContent = total.deaths;
@@ -28,6 +27,18 @@ function getcorona() {
             document.querySelector('#mdeaths').textContent = total.deaths;
             document.querySelector('#mrecovered').textContent = total.recovered;
             document.querySelector('#LastUpdate').textContent = time.toLocaleString();
+
+            $('.count').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
             var tblHtml =
                 "<table class='table ' id='coronaTable'>";
             tblHtml += "<thead class = 'table-dark'>";

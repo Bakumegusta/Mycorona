@@ -8,28 +8,29 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         var recovered_total = 0;
 
         $.each(data, function(i, d) {
-            // console.log(i);
-            // console.log("confirmd" + d[79].confirmed); 
-            document.querySelector('#LastUpdate').textContent = d[79].date;
-            confirmed_total += d[79].confirmed;
-            deaths_total += d[79].deaths;
-            recovered_total += d[79].recovered;
+            var final = d.length - 1;
+            // console.log(final);
+            // console.log(d[final].confirmed);
+            // console.log("confirmd" + d[final].confirmed); 
+            document.querySelector('#LastUpdate').textContent = d[final].date;
+            confirmed_total += d[final].confirmed;
+            deaths_total += d[final].deaths;
+            recovered_total += d[final].recovered;
             var parent = document.querySelector('#parent');
             var row = document.createElement('tr');
             row.innerHTML = `
                               <td>${i}</td>
-                              <td>${d[79].confirmed}</td>
-                               <td>${d[79].deaths}</td>
-                              <td>${d[79].recovered}</td>
+                              <td>${d[final].confirmed}</td>
+                               <td>${d[final].deaths}</td>
+                              <td>${d[final].recovered}</td>
                               </tr>
 
                 `;
             parent.append(row);
             // $.each(d, function(key, value) {
-            //     // console.log(key);
+            //     console.log(key);
             //     // console.log(value);
             // })
-
         });
         $('#corona').DataTable({
             responsive: true,

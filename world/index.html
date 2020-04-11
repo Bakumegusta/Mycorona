@@ -15,35 +15,28 @@
 <body>
     <br>
     <section class="container">
-            <hr><h1>Covid-19 India</h1> <hr>
+            <hr><h1>Covid-19 World</h1> <hr>
               <div class="button-container">
-                <a href="#" class="btn"><span>India</span></a>
-                 <a href="world/index.html" class="btn"><span>World</span></a>
+                <a href="../index.html" class="btn"><span>India</span></a>
+                 <a href="#" class="btn"><span>World</span></a>
               </div>
               <br>
             <div class="card-group">
-                <div class="card text-white  text-center ml-4 ">
+                <div class="card text-white  text-center ml-4">
                   <div class="card-header confirmed">Confirmed</div> 
                   <div class="card-body">
                     <h5 class="card-title confirmed" ><span class="count"id="confirmed">0</span></h5>
                     <p class="card-text"> <span id="plusconfirmed"></span></p>
                   </div>
                 </div>
-                <div class="card text-white  text-center ml-4 ">
+                <div class="card text-white  text-center ml-4">
                   <div class="card-header recovered">Recovered</div>
                   <div class="card-body">
                     <h5 class="card-title recovered"><span class="count" id="recovered">0</span></h5>
                     <p class="card-text"><span id="plusconfirmed"></p>
                   </div>
                 </div>
-                <div class="card text-white  text-center ml-4 ">
-                  <div class="card-header active">Active</div>
-                  <div class="card-body">
-                    <h5 class="card-title active" ><span class="count" id="active">0</span></h5>
-                    <p class="card-text"><span id="plusconfirmed"></p>
-                  </div>
-                </div>
-                <div class="card text-white  text-center ml-4 ">
+                <div class="card text-white  text-center ml-4">
                   <div class="card-header deaths">Deaths</div>
                   <div class="card-body">
                     <h5 class="card-title deaths" ><span class="count" id="deaths">0</span></h5>
@@ -54,30 +47,26 @@
     <h6>Last Updated :  <span id="LastUpdate"></span></h6>
   
     
-           <div id="corona-tab" class="tab-content current display table-responsive "> </div>
-            </div>
+           <div id="corona-tab" class="tab-content current display table-responsive "> 
+
+                <table class="table " id="corona">
+                  <thead>
+                    <tr>
+                      <th scope="col">Country</th>
+                      <th scope="col">Confirmed</th>
+                      <th scope="col">Deaths</th>
+                      <th scope="col">Recovered</th>
+                    </tr>
+                  </thead>
+                  <tbody id="parent">
+                  </tbody>
+                </table>
+           </div>
+
 
     </section>
-
-
- 
-<!--     <section class="container">
-        <table class="table" id="coronaDistTable">
-    <thead class="table-dark">
-        <tr>
-            <th>District</th>
-            <th>Confirm</th>
-        </tr>
-    </thead>
-    <tbody id="parent">
-        
-    </tbody>
-</table>
-    </section> -->
-
-
     <footer>
-        <p><span id="me"><img src="mylogo.png" alt="mylogo"></span></p>
+        <p><span id="me"><img src="../mylogo.png" alt="mylogo"></span></p>
     </footer>
 
 

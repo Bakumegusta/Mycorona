@@ -1,3 +1,6 @@
+*:active {
+   outline:none !important;
+}
 .button-container {
    display: flex;
   align-items: center;
@@ -5,6 +8,9 @@
    user-select: none;
 
    /*transform: translate(-50%, -50%);*/
+}
+table td, table tr{
+background: transparent !important;
 }
 .card-group {
     margin-left: -25px;
@@ -53,6 +59,7 @@
 *{
   margin:0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
@@ -94,6 +101,7 @@ table td{
 #corona-tab thead th{
 background-color: rgb(99, 111, 131);
  position: sticky; top: 0; 
+ color: white;
 }
 
 h6{

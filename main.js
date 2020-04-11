@@ -1,13 +1,5 @@
-$('#mobcard').hide();
-if (screen.width <= 699) {
-    $('#deskcard').hide();
-    $('#mobcard').show();
-}
-
 getcorona();
 // Karnataka();
-
-
 function getcorona() {
     fetch("https://api.covid19india.org/data.json")
         .then(response => response.json())
@@ -25,10 +17,6 @@ function getcorona() {
             document.querySelector('#confirmed').textContent = total.confirmed;
             document.querySelector('#deaths').textContent = total.deaths;
             document.querySelector('#recovered').textContent = total.recovered;
-            document.querySelector('#mactive').textContent = total.active;
-            document.querySelector('#mconfirmed').textContent = total.confirmed;
-            document.querySelector('#mdeaths').textContent = total.deaths;
-            document.querySelector('#mrecovered').textContent = total.recovered;
             document.querySelector('#LastUpdate').textContent = localTime.toLocaleString();
             // counter code
             $('.count').each(function() {

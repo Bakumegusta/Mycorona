@@ -12,6 +12,9 @@
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
+table td, table tr{
+background: transparent !important;
+}
  .btn {
    display: block;
    height: 50px;
@@ -139,9 +142,30 @@ footer{
 
 
 @media only screen and (max-width: 600px) {
+  .card-group {
+    margin-left: -20px;
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+  .card-header {
+    padding: .75rem 1.25rem;
+    font-size: 12px;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+  .card-group>.card {
+    margin-bottom: 15px;
+    width: 40% !important;
+}
+h1{
+  font-size: 2rem;
+}
   h6{
     font-size: 9px !important;
   }
+  
  thead{
   font-size: 7px !important;
  }

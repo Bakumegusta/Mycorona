@@ -1,10 +1,9 @@
 getcorona();
-// Karnataka();
 function getcorona() {
     fetch("https://api.covid19india.org/data.json")
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             const {
                 statewise: [total]
             } = data;
@@ -12,7 +11,7 @@ function getcorona() {
             var datearray = time.split("/");
             var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
             var localTime = new Date(newdate);
-            console.log(newdate);
+            // console.log(newdate);
             document.querySelector('#active').textContent = total.active;
             document.querySelector('#confirmed').textContent = total.confirmed;
             document.querySelector('#deaths').textContent = total.deaths;
@@ -32,31 +31,41 @@ function getcorona() {
             });
             // table rendering
             $.each(data.statewise, function(i, d) {
-                console.log(d);
-                var parent = document.querySelector('#parent');
-                var row = document.createElement('tr');
-                row.innerHTML = `
-                              <td>${d.state}</td>
-                              <td>${d.recovered}</td>
-                              <td>${d.deaths}</td>
-                              <td>${d.confirmed}</td>
-                              <td>${d.active}</td>
-                              </tr>
-
-                `;
-                parent.append(row);
-                // $('#coronaTable').DataTable({
-                //     responsive: true,
-                //     colReorder: true,
-                //     scrollY: '70vh',
-                //     scrollCollapse: true,
-                //     paging: false,
-                //     "ordering": false
-                // });
+                if(i!=0){
+                    console.log(d);
+                    var parent = document.querySelector('#parent');
+                    var row = document.createElement('tr');
+                    row.innerHTML = `
+                                  <td id="${d.statecode}">${d.state}</td>
+                                  <td>${d.recovered}</td>
+                                  <td>${d.deaths}</td>
+                                  <td>${d.confirmed}</td>
+                                  <td>${d.active}</td>
+                                  </tr>
+                    `;
+                    parent.append(row);
+                }
+            
             });
+            // var table = $('#corona').DataTable();
 
+            var day= [];
+            var confirmed =[];
+            var recovered =[];
+            var death =[];
+            const lineChart =data.cases_time_series;
+            lineChart.forEach(function(data){
+                day.push(data.date);
+                confirmed.push(data.totalconfirmed);
+                recovered.push(data.totalrecovered);
+                death.push(data.totaldeceased);               
+
+            })
+          
         });
+
 }
+
 
 // function Karnataka() {
 //     console.log(name);

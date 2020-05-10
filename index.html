@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
 </head>
 <body>
     <br>
@@ -53,47 +54,98 @@
             </div>
     <h6>Last Updated :  <span id="LastUpdate"></span></h6>
   
-    
-           <div id="corona-tab" class="tab-content current display table-responsive "> 
-            <table class="table" id="corona">
-                <thead class="table-dark">
-                    <tr>
-                        <th>State</th>
-                        <th>Recovered</th>
-                        <th>Deaths</th>
-                        <th>Confirmed</th>
-                        <th>Active</th>
-                    </tr>
-                </thead>
-                <tbody id="parent">                  
-                </tbody>
-               </table>
-              </div>
+    <div class="mainwrapper">
+      <div id="corona-tab" class="tab-content current display table-responsive "> 
+        <table class="table" id="corona">
+            <thead class="table-dark">
+                <tr>
+                    <th>State</th>
+                    <th>Confirmed</th>
+                    <th>Recovered</th>
+                    <th>Active</th>
+                    <th>Deaths</th>
+                </tr>
+            </thead>
+            <tbody id="parent">                  
+            </tbody>
+           </table>
+          </div>
+          <div class="chartdata" >
+            <div class="chart-container">
+              <canvas id="chart_0"></canvas>
+          </div>
+          </div>  
+    </div>
+                     
     </section>
 
 
- 
-    <section class="container">
-        <table class="table" id="coronaDistTable">
-    <thead class="table-dark">
-        <tr>
+ <div class="districtModal">
+  <section class="container districtModal-content">
+    <button class="close"><i class="fa fa-close" aria-hidden="true"></i></button>
+    <h1 id='stateLabel'>Statelable</h1>
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">CONFIRMED</h5>
+          <p class="card-text" id='stateConfirmed'>0</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">RECOVERED</h5>
+          <p class="card-text" id="stateRecovered">0</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">ACTIVE</h5>
+          <p class="card-text" id="stateActive">0</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">DEATHS</h5>
+          <p class="card-text" id="stateDeath">0</p>
+        </div>
+      </div>
+    </div>
+<div class="mainwrapper">
+  <div class="tableWrapper mt-4" >
+    <table class="table" id="coronaDistTable">
+      <thead class="table-dark">
+          <tr>
             <th>District</th>
-            <th>Confirm</th>
-        </tr>
-    </thead>
-    <tbody id="distparent">
-        
-    </tbody>
-</table>
-    </section>
+            <th>Confirmed</th>
+            <th>Recovered</th>
+            <th>Active</th>
+            <th>Deaths</th>
+          </tr>
+      </thead>
+      <tbody id="distparent"> </tbody>
+  </table>
+  </div>
+  <div class="chartdata1" >
+    <div class="chart-container">
+      <canvas id="chart_1"></canvas>
+  </div>
+  </div> 
+</div>
+   
+
+  </section>
+ </div>
+ 
+
   
     <footer>
         <p><span id="me"><img src="mylogo.png" alt="mylogo"></span></p>
     </footer>
-
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
 <script src="main.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
 
 </body>
 </html>

@@ -64,13 +64,16 @@ background: transparent !important;
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(40deg,#ff6ec4,#7873f5) !important;
+  /* background: linear-gradient(40deg,#ff6ec4,#7873f5) !important; */
+  background: linear-gradient(40deg,#13547a,#80d0c7) !important;
+
 }
 .container{
   width: 90% !important;
 }
 #corona-tab{
   height: 500px;
+  width: 50%;
 }
 #card-head{
 background-color: rgb(99, 111, 131) !important;
@@ -99,7 +102,7 @@ table td{
     text-align: center;
 }
 #corona-tab thead th{
-background-color: rgb(99, 111, 131);
+background-color: rgb(17, 18, 20);
  position: sticky; top: 0; 
  color: white;
 }

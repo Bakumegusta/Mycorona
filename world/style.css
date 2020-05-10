@@ -54,8 +54,6 @@ background: transparent !important;
 
 }
  
-
-
 *{
   margin:0px;
   padding: 0px;
@@ -66,7 +64,6 @@ body {
   font-family: "Montserrat", sans-serif;
   /* background: linear-gradient(40deg,#ff6ec4,#7873f5) !important; */
   background: linear-gradient(40deg,#13547a,#80d0c7) !important;
-
 }
 .container{
   width: 90% !important;
@@ -100,11 +97,13 @@ thead{
 table td{
     color: white;
     text-align: center;
+    font-size: 12px;
 }
 #corona-tab thead th{
 background-color: rgb(17, 18, 20);
  position: sticky; top: 0; 
  color: white;
+ font-size: 12px;
 }
 
 h6{
@@ -147,9 +146,43 @@ footer{
 #me img{
   width:100px;
 }
+.mainwrapper{
+  display: flex;
+}
+.chartdata{
+  background-color: black;
+  width: 50%;
+  height: 370px;
+  /* float: right; */
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+.chart-container {
+  position: relative; 
+  padding-top: 100px;
+  padding-left: 20px;
+  margin: auto;
+}
 
 
 @media only screen and (max-width: 600px) {
+  thead th{
+    font-size: 10px !important;
+  }
+  .mainwrapper{
+    display: block !important;
+  }
+  .chartdata{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 20px;
+  }
+
+  #corona-tab{
+    width: 100%;
+    height: 300px;
+  }
   .card-group {
     margin-left: 4px;
     display: -ms-flexbox;
@@ -181,6 +214,3 @@ h1{
   font-size: 8px !important;
  }
 }
-
-
-

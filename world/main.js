@@ -33,19 +33,68 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
             // })
         });
         $('#corona').DataTable({
-            responsive: true,
-            colReorder: true,
-            scrollY: '70vh',
-            scrollCollapse: true,
-            paging: false,
-            "ordering": false
-        });
-        console.log('confirmed' + confirmed_total);
-        console.log('deaths' + deaths_total);
-        console.log('recovered' + recovered_total);
+          responsive: true,
+          colReorder: true,
+          scrollY: '52vh',
+          scrollCollapse: true,
+          scrollX:true,
+          paging: false,
+          "ordering": false,
+          "bInfo" : false,
+          columnDefs: [{
+              width: '20%',
+              targets: 0
+          }],
+          fixedColumns: true
+      });
+        // console.log('confirmed' + confirmed_total);
+        // console.log('deaths' + deaths_total);
+        // console.log('recovered' + recovered_total);
         document.querySelector('#confirmed').textContent = confirmed_total;
         document.querySelector('#deaths').textContent = deaths_total;
         document.querySelector('#recovered').textContent = recovered_total;
+
+        // chart render
+        var c= parseInt(confirmed_total);
+        var d= parseInt(deaths_total);
+        var r= parseInt(recovered_total);
+        var chartTotal = [c,d,r];
+        // console.log(chartTotal);
+         //    chart data
+       var data = {
+        labels: ["Confirmed", "Deaths", "Recovered"],
+        datasets: [{
+          label: "Total Case",
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          borderWidth: 2,
+          hoverBackgroundColor: "rgba(255,99,132,0.4)",
+          hoverBorderColor: "rgba(255,99,132,1)",
+          data: chartTotal,
+        }]
+      };         
+      var option = {
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              display: true,
+              color: "rgba(255,99,132,0.2)"
+            }
+          }],
+          xAxes: [{
+            gridLines: {
+              display: false
+            }
+          }]
+        }
+      };
+      
+      Chart.Bar('chart_0', {
+        options: option,
+        data: data
+      });        
+
         // counter code
         $('.count').each(function() {
             $(this).prop('Counter', 0).animate({

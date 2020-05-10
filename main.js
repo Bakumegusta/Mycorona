@@ -39,7 +39,7 @@ function getcorona() {
                     var parent = document.querySelector('#parent');
                     var row = document.createElement('tr');
                     row.innerHTML = `
-                                  <td id="${d.statecode}" onclick= state(this.id,this)>${d.state} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></td>
+                                  <td id="${d.statecode}" onclick= state(this.id,this)>${d.state} <img src="https://img.icons8.com/color/20/000000/tap.png"/></td>
                                   <td>${d.confirmed}</td>                              
                                   <td>${d.recovered}</td>
                                   <td>${d.active}</td>
@@ -55,12 +55,13 @@ function getcorona() {
                 colReorder: true,
                 scrollY: '52vh',
                 scrollCollapse: true,
+                scrollX:true,
                 paging: false,
                 "ordering": false,
                 "searching": false,
                 "bInfo" : false,
                 columnDefs: [{
-                    width: '20%',
+                    width: '40%',
                     targets: 0
                 }],
                 fixedColumns: true
@@ -254,7 +255,7 @@ $('.districtModal').show();
                 var parent = document.querySelector('#distparent');
                 var row = document.createElement('tr');
                 row.innerHTML = `
-                            <td>${i} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></td>
+                            <td>${i}</td>
                             <td>${d.confirmed}</td>
                             <td>${d.recovered}</td>
                             <td>${d.active}</td>
@@ -314,8 +315,6 @@ $('.districtModal').show();
             options: option,
             data: data
           });        
-
-
             $('#coronaDistTable').DataTable({
                 responsive: true,
                 colReorder: true,
@@ -327,9 +326,10 @@ $('.districtModal').show();
                 "bInfo" : false,
                 columnDefs: [{
                     width: '20%',
-                    targets: 0
+                    targets: [0,1,2,3,4,5]
                 }],
-                fixedColumns: true
+                fixedColumns: true,
+                fixedHeader: true
             });
         });
         $('#coronaDistTable tbody').empty();
